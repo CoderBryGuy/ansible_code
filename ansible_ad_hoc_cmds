@@ -1,0 +1,52 @@
+root@NetworkAutomation-1:~# history 
+    1  ip addr
+    2  nano /etc/network/interfaces
+    3  cat /etc/network/interfaces
+    4  ifconfig 
+    5  ls -l
+    6  ls -l /etc/
+    7  ls -l /etc/network/
+    8  cat /etc/host.cfg
+    9  ls -l /etc/ | grep host
+   10  cat /etc/host
+   11  cat /etc/hosts
+   12  ifconfig
+   13  nano /etc/hosts
+   14  cat /etc/hosts
+   15  ls -l
+   16  nano gns3hosts 
+   17  ping SW3
+   18  ping R2
+   19  history 
+   20  ansible all -m ./gns3hosts -m raw -a "show run | in user" -u bryan -k | grep 'SUCCESS\|username' > usernames.txt
+   21  ls -l
+   22  cat usernames.txt 
+   23  ansible all -m ./gns3hosts -m raw -a "show run | in user" -u bryan -k | grep 'SUCCESS\|username' > moreusernames.txt
+   24  cat moreusernames.txt 
+   25  ls -l
+   26  cat ansible.cfg 
+   27  cat gns3hosts 
+   28  ansible all -m ./gns3hosts -m raw -a "show run" -u bryan -k > showrun.txt
+   29  ls -l
+   30  cat showrun.txt 
+   31  cat etc/hosts
+   32  cat/ etc/hosts
+   33  cat /etc/hosts
+   34  cat gns3hosts 
+   35  nano gns3hosts 
+   36  ansible all -m ./gns3hosts -m raw -a "show run | in user" -u bryan -k | grep 'SUCCESS\|username' > usernames.txt
+   37  cat usernames.txt 
+   38  ssh bryan@SW3
+   39  ls -l
+   40  more showrun.txt 
+   41  ansible all -m ./gns3hosts -m raw -a "show ver" -u bryan -k > showver.txt
+   42  cat showver.txt 
+   43  more showver.txt 
+   44  ansible all -m ./gns3hosts -m raw -a "show run | in user" -u bryan -k | grep 'SUCCESS\|username' 
+   45  ansible all -m ./gns3hosts -m raw -a "show run | in user" -u bryan -k | grep 'hostname\|username' 
+   46  ansible all -m ./gns3hosts -m raw -a "show run | in user" -u bryan -k | grep 'hostname' 
+   47  ansible all -m ./gns3hosts -m raw -a "show run" -u bryan -k | grep 'hostname\|username' 
+   48  ssh bryan@SW2
+   49  ssh bryan SW2
+   50  ssh -l b
+
