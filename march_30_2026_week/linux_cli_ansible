@@ -1,0 +1,67 @@
+root@NetworkAutomation-1:~# history 
+    1  nano getarp1.yml
+    2  cat gns3hosts 
+    3  nano getarp1.yml
+    4  cat gns3hosts 
+    5  cat getarp1.yml
+    6  ansible-playbook ?
+    7  ansible-playbook
+    8  ansible-playbook getarp1.yml -u bryan -k
+    9  cat getarp1.yml
+   10  nano getarp1.yml
+   11  rm getarp1.yml 
+   12  nano getarp1.yml
+   13  ansible-playbook getarp1.yml -u bryan -k
+   14  ifconfig t
+   15  ifconfig
+   16  cat hosts
+   17  cat /etc/hosts
+   18  cat ansible.cfg 
+   19  cat gns3hosts 
+   20  ping csw1
+   21  pwd
+   22  nano ansible.cfg 
+   23  ansible-playbook getarp1.yml -u bryan -k
+   24  cat /etc/hosts
+   25  cat gns3hosts 
+   26  cat getarp1.yml 
+   27  nano getarp1.yml 
+   28  ansible-playbook getarp1.yml -u bryan -k
+   29  cat ansible.cfg 
+   30  cat gns3hosts 
+   31  cat hosts
+   32  cat /etc/hosts
+   33  nano ansible.cfg 
+   34  ansible-playbook getarp1.yml -u bryan -k
+   35  nano getarp1.yml 
+   36  ansible-playbook getarp1.yml -u bryan -k
+   37  apt update
+   38  apt install -y sshpass
+   39  ansible-playbook getarp1.yml -u bryan -k
+   40  nana getarp1.yml 
+   41  ls -l
+   42  nano getarp1.yml 
+   43  ansible-playbook getarp1.yml -u bryan -k
+   44  ansible-playbook getarp1.yml -u bryan -k | grep 'ok:\|4e00'
+   45  ping acc-sw1
+   46  ansible-playbook getarp1.yml -u bryan -k | grep 'ok:\|4e00'
+   47  ansible-playbook getarp1.yml -u bryan -k 
+   48  ping acc-sw2
+   49  cat /etc/hosts
+   50  ping acc-sw2
+   51  ping ip address 192.168.42.41
+   52  ping 192.168.42.41
+   53  ping acc-sw2
+   54  cat /etc/hosts
+   55  ping acc-sw2
+   56  ping acc-sw3
+   57  history 
+   58  ansible-playbook getarp1.yml -u bryan -k 
+   59  cat getarp1.yml 
+   60  history 
+   61  ansible-playbook getarp1.yml -u bryan -k | grep 'ok:\|4e00'
+   62  ansible-playbook getarp1.yml -u bryan -k | grep 'ok:\|.4'
+   63  ansible-playbook getarp1.yml -u bryan -k | grep 'ok:\|.100'
+   64  ansible-playbook getarp1.yml -u bryan -k | grep 'ok:\|\.100'
+   65  ansible-playbook getarp1.yml -u bryan -k | grep 'ok:\|\.110'
+   66  history 

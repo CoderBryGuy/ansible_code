@@ -1,0 +1,89 @@
+root@NetworkAutomation-1:~# !46
+ansible-playbook getarp1.yml -u bryan -k | grep 'ok:\|4e00'
+SSH password: 
+[DEPRECATION WARNING]: The TRANSFORM_INVALID_GROUP_CHARS settings is set to allow bad characters in group names by default, this 
+will change, but still be user configurable on deprecation. This feature will be removed in version 2.10. Deprecation warnings 
+can be disabled by setting deprecation_warnings=False in ansible.cfg.
+[WARNING]: Invalid characters were found in group names but not replaced, use -vvvv to see details
+ok: [csw2] => {
+        "Internet  192.168.42.110          8   0242.e07f.4e00  ARPA   Vlan1"
+ok: [csw1] => {
+        "Internet  192.168.42.110          8   0242.e07f.4e00  ARPA   Vlan1"
+ok: [acc-sw2] => {
+        "Internet  192.168.42.110          1   0242.e07f.4e00  ARPA   Vlan1"
+ok: [acc-sw3] => {
+        "Internet  192.168.42.110          1   0242.e07f.4e00  ARPA   Vlan1"
+ok: [acc-sw1] => {
+        "Internet  192.168.42.110          8   0242.e07f.4e00  ARPA   Vlan1"
+root@NetworkAutomation-1:~# ansible-playbook getarp1.yml -u bryan -k | grep 'ok:\|.4'
+SSH password: 
+[DEPRECATION WARNING]: The TRANSFORM_INVALID_GROUP_CHARS settings is set to allow bad characters in group names by default, this 
+will change, but still be user configurable on deprecation. This feature will be removed in version 2.10. Deprecation warnings 
+can be disabled by setting deprecation_warnings=False in ansible.cfg.
+[WARNING]: Invalid characters were found in group names but not replaced, use -vvvv to see details
+ok: [csw1] => {
+        "Internet  192.168.42.31           -   0c07.5869.8001  ARPA   Vlan1",
+        "Internet  192.168.42.41          11   0c14.f67c.8001  ARPA   Vlan1",
+        "Internet  192.168.42.42           1   0c99.d934.8001  ARPA   Vlan1",
+        "Internet  192.168.42.43           1   0c80.9f1e.8001  ARPA   Vlan1",
+        "Internet  192.168.42.110          9   0242.e07f.4e00  ARPA   Vlan1"
+ok: [acc-sw1] => {
+        "Internet  192.168.42.31           4   0c07.5869.8001  ARPA   Vlan1",
+        "Internet  192.168.42.41           -   0c14.f67c.8001  ARPA   Vlan1",
+        "Internet  192.168.42.42           1   0c99.d934.8001  ARPA   Vlan1",
+        "Internet  192.168.42.43           1   0c80.9f1e.8001  ARPA   Vlan1",
+        "Internet  192.168.42.110          9   0242.e07f.4e00  ARPA   Vlan1"
+ok: [csw2] => {
+        "Internet  192.168.42.31           4   0c07.5869.8001  ARPA   Vlan1",
+        "Internet  192.168.42.32           -   0c63.5957.8001  ARPA   Vlan1",
+        "Internet  192.168.42.41          11   0c14.f67c.8001  ARPA   Vlan1",
+        "Internet  192.168.42.42           1   0c99.d934.8001  ARPA   Vlan1",
+        "Internet  192.168.42.43           1   0c80.9f1e.8001  ARPA   Vlan1",
+        "Internet  192.168.42.110          9   0242.e07f.4e00  ARPA   Vlan1"
+ok: [acc-sw2] => {
+        "Internet  192.168.42.42           -   0c99.d934.8001  ARPA   Vlan1",
+        "Internet  192.168.42.43           1   0c80.9f1e.8001  ARPA   Vlan1",
+        "Internet  192.168.42.110          1   0242.e07f.4e00  ARPA   Vlan1"
+ok: [acc-sw3] => {
+        "Internet  192.168.42.42           1   0c99.d934.8001  ARPA   Vlan1",
+        "Internet  192.168.42.43           -   0c80.9f1e.8001  ARPA   Vlan1",
+        "Internet  192.168.42.110          1   0242.e07f.4e00  ARPA   Vlan1"
+root@NetworkAutomation-1:~# ansible-playbook getarp1.yml -u bryan -k | grep 'ok:\|.100'
+SSH password: 
+[DEPRECATION WARNING]: The TRANSFORM_INVALID_GROUP_CHARS settings is set to allow bad characters in group names by default, this 
+will change, but still be user configurable on deprecation. This feature will be removed in version 2.10. Deprecation warnings 
+can be disabled by setting deprecation_warnings=False in ansible.cfg.
+[WARNING]: Invalid characters were found in group names but not replaced, use -vvvv to see details
+ok: [acc-sw1] => {
+ok: [acc-sw2] => {
+ok: [csw1] => {
+ok: [csw2] => {
+ok: [acc-sw3] => {
+root@NetworkAutomation-1:~# ansible-playbook getarp1.yml -u bryan -k | grep 'ok:\|\.100'
+SSH password: 
+[DEPRECATION WARNING]: The TRANSFORM_INVALID_GROUP_CHARS settings is set to allow bad characters in group names by default, this 
+will change, but still be user configurable on deprecation. This feature will be removed in version 2.10. Deprecation warnings 
+can be disabled by setting deprecation_warnings=False in ansible.cfg.
+[WARNING]: Invalid characters were found in group names but not replaced, use -vvvv to see details
+ok: [csw1] => {
+ok: [csw2] => {
+ok: [acc-sw2] => {
+ok: [acc-sw3] => {
+ok: [acc-sw1] => {
+root@NetworkAutomation-1:~# ansible-playbook getarp1.yml -u bryan -k | grep 'ok:\|\.110'
+SSH password: 
+[DEPRECATION WARNING]: The TRANSFORM_INVALID_GROUP_CHARS settings is set to allow bad characters in group names by default, this 
+will change, but still be user configurable on deprecation. This feature will be removed in version 2.10. Deprecation warnings 
+can be disabled by setting deprecation_warnings=False in ansible.cfg.
+[WARNING]: Invalid characters were found in group names but not replaced, use -vvvv to see details
+ok: [csw2] => {
+        "Internet  192.168.42.110         10   0242.e07f.4e00  ARPA   Vlan1"
+ok: [acc-sw2] => {
+        "Internet  192.168.42.110          2   0242.e07f.4e00  ARPA   Vlan1"
+ok: [acc-sw1] => {
+        "Internet  192.168.42.110         10   0242.e07f.4e00  ARPA   Vlan1"
+ok: [csw1] => {
+        "Internet  192.168.42.110         10   0242.e07f.4e00  ARPA   Vlan1"
+ok: [acc-sw3] => {
+        "Internet  192.168.42.110          2   0242.e07f.4e00  ARPA   Vlan1"
+root@NetworkAutomation-1:~# 
