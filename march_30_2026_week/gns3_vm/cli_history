@@ -1,0 +1,68 @@
+gns3@gns3vm:~$  history 
+    1  ifconfig 
+    2  systemctl status gns
+    3  systemctl status gns3
+    4  sudo netstat -tulnp | grep 3080
+    5  ls -l
+    6  ls -la
+    7  cd ./.config/
+    8  ls -l
+    9  cd GNS3/
+   10  ls -l
+   11  ls -la
+   12  pwd
+   13  cd ..
+   14  ls -l
+   15  cd..
+   16  ls -la
+   17  cd /
+   18  ls -la
+   19  cd /etc/
+   20  ls -la
+   21  cd /
+   22  pwd
+   23  find / -name gns3_server.conf 2>/dev/null
+   24  cd /home/gns3/.config/GNS3/2.2/
+   25  ls -l
+   26  nano gns3_server.conf 
+   27  reboot
+   28  docker ps -a
+   29  exit
+   30  exit 
+   31  clear
+   32  docker ps -a
+   33  docker rm 1d9bfb1ba184
+   34  docker ps -a
+   35  docker rm c476742c7945 
+   36  docker ps -a
+   37  docker rm 80d368bcddae 
+   38  docker ps -a
+   39  docker rm e078a2720640 
+   40  docker ps -a
+   41  ifconfig 
+   42  ip a
+   43  ping 192.168.172.10
+   44  ping 192.168.42.41
+   45  sudo ufw status
+   46  ping 192.168.172.10
+   47  sudo sysctl -w net.ipv4.ip_forward=1
+   48  cat /proc/sys/net/ipv4/ip_forward
+   49  # Should output: 1
+   50  echo "net.ipv4.ip_forward = 1" | sudo tee -a /etc/sysctl.conf
+   51  sudo sysctl -p
+   52  sudo iptables -A FORWARD -i eth1 -o virbr0 -j ACCEPT
+   53  sudo iptables -A FORWARD -i virbr0 -o eth1 -j ACCEPT
+   54  sudo iptables -t nat -A POSTROUTING -o virbr0 -j MASQUERADE
+   55  sudo apt install iptables-persistent
+   56  sudo netfilter-persistent save
+   57  sudo apt update
+   58  sudo apt install iptables-persistent
+   59  sudo netfilter-persistent save
+   60  history 
+   61  cat /proc/sys/net/ipv4/ip_forward
+   62  sudo iptables -L -v
+   63  sudo iptables -I LIBVIRT_FWI 1 -s 192.168.178.0/24 -d 192.168.42.0/24 -j ACCEPT
+   64  sudo iptables -I LIBVIRT_FWO 1 -s 192.168.42.0/24 -d 192.168.178.0/24 -j ACCEPT
+   65  sudo iptables -t nat -A POSTROUTING -s 192.168.178.0/24 -d 192.168.42.0/24 -j MASQUERADE
+   66  sudo netfilter-persistent save
+   67  sudo iptables -L -v
