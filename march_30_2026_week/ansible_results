@@ -85,5 +85,531 @@ ok: [acc-sw1] => {
 ok: [csw1] => {
         "Internet  192.168.42.110         10   0242.e07f.4e00  ARPA   Vlan1"
 ok: [acc-sw3] => {
-        "Internet  192.168.42.110          2   0242.e07f.4e00  ARPA   Vlan1"
+        "Internet  192.168.42.110          2   0242.e07f.4e00  ARPA   Vlan1"root@NetworkAutomation-1:~# ansible-playbook getmacaddress.yml -u bryan -k                   
+SSH password: 
+[DEPRECATION WARNING]: The TRANSFORM_INVALID_GROUP_CHARS settings is set to allow bad characters in group names by default, this 
+will change, but still be user configurable on deprecation. This feature will be removed in version 2.10. Deprecation warnings 
+can be disabled by setting deprecation_warnings=False in ansible.cfg.
+[WARNING]: Invalid characters were found in group names but not replaced, use -vvvv to see details
+
+PLAY [Get MAC info] **************************************************************************************************************
+
+TASK [show mac address table] ****************************************************************************************************
+changed: [csw2]
+changed: [csw1]
+changed: [acc-sw1]
+changed: [acc-sw2]
+changed: [acc-sw3]
+
+TASK [print MAC output] **********************************************************************************************************
+ok: [csw1] => {
+    "print_output.stdout_lines": [
+        "          Mac Address Table",
+        "-------------------------------------------",
+        "",
+        "Vlan    Mac Address       Type        Ports",
+        "----    -----------       --------    -----",
+        "   1    0242.e07f.4e00    DYNAMIC     Gi1/1",
+        "   1    0c14.f67c.0000    DYNAMIC     Gi0/2",
+        "   1    0c14.f67c.0001    DYNAMIC     Po1",
+        "   1    0c14.f67c.8001    DYNAMIC     Gi0/2",
+        "   1    0c63.5957.000e    DYNAMIC     Po1",
+        "   1    0c63.5957.000f    DYNAMIC     Po1",
+        "   1    0c63.5957.8001    DYNAMIC     Po1",
+        "   1    0c80.9f1e.0000    DYNAMIC     Gi1/0",
+        "   1    0c80.9f1e.0001    DYNAMIC     Po1",
+        "   1    0c80.9f1e.8001    DYNAMIC     Gi1/0",
+        "   1    0c99.d934.0000    DYNAMIC     Gi0/3",
+        "   1    0c99.d934.0001    DYNAMIC     Po1",
+        "   1    0c99.d934.8001    DYNAMIC     Gi0/3",
+        "   1    a299.b2f9.2fc3    DYNAMIC     Gi1/1",
+        "Total Mac Addresses for this criterion: 14"
+    ]
+}
+ok: [csw2] => {
+    "print_output.stdout_lines": [
+        "          Mac Address Table",
+        "-------------------------------------------",
+        "",
+        "Vlan    Mac Address       Type        Ports",
+        "----    -----------       --------    -----",
+        "   1    0242.e07f.4e00    DYNAMIC     Po1",
+        "   1    0c07.5869.000e    DYNAMIC     Po1",
+        "   1    0c07.5869.000f    DYNAMIC     Po1",
+        "   1    0c14.f67c.0000    DYNAMIC     Po1",
+        "   1    0c14.f67c.0001    DYNAMIC     Gi0/2",
+        "   1    0c80.9f1e.0000    DYNAMIC     Po1",
+        "   1    0c80.9f1e.0001    DYNAMIC     Gi1/0",
+        "   1    0c99.d934.0000    DYNAMIC     Po1",
+        "   1    0c99.d934.0001    DYNAMIC     Gi0/3",
+        "Total Mac Addresses for this criterion: 9"
+    ]
+}
+ok: [acc-sw2] => {
+    "print_output.stdout_lines": [
+        "          Mac Address Table",
+        "-------------------------------------------",
+        "",
+        "Vlan    Mac Address       Type        Ports",
+        "----    -----------       --------    -----",
+        "   1    0242.e07f.4e00    DYNAMIC     Gi0/0",
+        "   1    0c07.5869.0003    DYNAMIC     Gi0/0",
+        "   1    0c14.f67c.0000    DYNAMIC     Gi0/0",
+        "   1    0c14.f67c.0001    DYNAMIC     Gi0/0",
+        "   1    0c63.5957.000e    DYNAMIC     Gi0/0",
+        "   1    0c63.5957.000f    DYNAMIC     Gi0/0",
+        "   1    0c80.9f1e.0000    DYNAMIC     Gi0/0",
+        "   1    0c80.9f1e.0001    DYNAMIC     Gi0/0",
+        "   1    0c99.d934.0001    DYNAMIC     Gi0/0",
+        "Total Mac Addresses for this criterion: 9"
+    ]
+}
+ok: [acc-sw1] => {
+    "print_output.stdout_lines": [
+        "          Mac Address Table",
+        "-------------------------------------------",
+        "",
+        "Vlan    Mac Address       Type        Ports",
+        "----    -----------       --------    -----",
+        "   1    0242.e07f.4e00    DYNAMIC     Gi0/0",
+        "   1    0c07.5869.0002    DYNAMIC     Gi0/0",
+        "   1    0c14.f67c.0001    DYNAMIC     Gi0/0",
+        "   1    0c63.5957.000e    DYNAMIC     Gi0/0",
+        "   1    0c63.5957.000f    DYNAMIC     Gi0/0",
+        "   1    0c80.9f1e.0000    DYNAMIC     Gi0/0",
+        "   1    0c80.9f1e.0001    DYNAMIC     Gi0/0",
+        "   1    0c99.d934.0000    DYNAMIC     Gi0/0",
+        "   1    0c99.d934.0001    DYNAMIC     Gi0/0",
+        "Total Mac Addresses for this criterion: 9"
+    ]
+}
+ok: [acc-sw3] => {
+    "print_output.stdout_lines": [
+        "          Mac Address Table",
+        "-------------------------------------------",
+        "",
+        "Vlan    Mac Address       Type        Ports",
+        "----    -----------       --------    -----",
+        "   1    0242.e07f.4e00    DYNAMIC     Gi0/0",
+        "   1    0c07.5869.0004    DYNAMIC     Gi0/0",
+        "   1    0c14.f67c.0000    DYNAMIC     Gi0/0",
+        "   1    0c14.f67c.0001    DYNAMIC     Gi0/0",
+        "   1    0c63.5957.000e    DYNAMIC     Gi0/0",
+        "   1    0c63.5957.000f    DYNAMIC     Gi0/0",
+        "   1    0c80.9f1e.0001    DYNAMIC     Gi0/0",
+        "   1    0c99.d934.0000    DYNAMIC     Gi0/0",
+        "   1    0c99.d934.0001    DYNAMIC     Gi0/0",
+        "Total Mac Addresses for this criterion: 9"
+    ]
+}
+
+PLAY RECAP ***********************************************************************************************************************
+acc-sw1                    : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+acc-sw2                    : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+acc-sw3                    : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+csw1                       : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+csw2                       : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+root@NetworkAutomation-1:~# 
+
+[DEPRECATION WARNING]: The TRANSFORM_INVALID_GROUP_CHARS settings is set to allow bad characters in group names by default, this 
+will change, but still be user configurable on deprecation. This feature will be removed in version 2.10. Deprecation warnings 
+can be disabled by setting deprecation_warnings=False in ansible.cfg.
+[WARNING]: Invalid characters were found in group names but not replaced, use -vvvv to see details
+        "   1    0c80.9f1e.0000    DYNAMIC     Gi1/0",
+        "   1    0c80.9f1e.0001    DYNAMIC     Po1",
+        "   1    0c80.9f1e.8001    DYNAMIC     Gi1/0",
+        "   1    0c80.9f1e.0000    DYNAMIC     Gi0/0",
+        "   1    0c80.9f1e.0001    DYNAMIC     Gi0/0",
+        "   1    0c80.9f1e.0000    DYNAMIC     Gi0/0",
+        "   1    0c80.9f1e.0001    DYNAMIC     Gi0/0",
+        "   1    0c80.9f1e.0001    DYNAMIC     Gi0/0",
+        "   1    0c80.9f1e.0000    DYNAMIC     Po1",
+        "   1    0c80.9f1e.0001    DYNAMIC     Gi1/0",
+root@NetworkAutomation-1:~# ansible-playbook getmacaddress.yml -u bryan -k | grep 'ok:\|0c80'
+SSH password: 
+[DEPRECATION WARNING]: The TRANSFORM_INVALID_GROUP_CHARS settings is set to allow bad characters in group names by default, this 
+will change, but still be user configurable on deprecation. This feature will be removed in version 2.10. Deprecation warnings 
+can be disabled by setting deprecation_warnings=False in ansible.cfg.
+[WARNING]: Invalid characters were found in group names but not replaced, use -vvvv to see details
+ok: [csw2] => {
+        "   1    0c80.9f1e.0000    DYNAMIC     Po1",
+        "   1    0c80.9f1e.0001    DYNAMIC     Gi1/0",
+ok: [csw1] => {
+        "   1    0c80.9f1e.0000    DYNAMIC     Gi1/0",
+        "   1    0c80.9f1e.0001    DYNAMIC     Po1",
+        "   1    0c80.9f1e.8001    DYNAMIC     Gi1/0",
+ok: [acc-sw1] => {
+        "   1    0c80.9f1e.0000    DYNAMIC     Gi0/0",
+        "   1    0c80.9f1e.0001    DYNAMIC     Gi0/0",
+ok: [acc-sw2] => {
+        "   1    0c80.9f1e.0000    DYNAMIC     Gi0/0",
+        "   1    0c80.9f1e.0001    DYNAMIC     Gi0/0",
+ok: [acc-sw3] => {
+        "   1    0c80.9f1e.0001    DYNAMIC     Gi0/0"
+
+        oot@NetworkAutomation-1:~# ansible-playbook getvers.yml -u bryan -k
+SSH password: 
+[DEPRECATION WARNING]: The TRANSFORM_INVALID_GROUP_CHARS settings is set to 
+allow bad characters in group names by default, this will change, but still be 
+user configurable on deprecation. This feature will be removed in version 2.10.
+ Deprecation warnings can be disabled by setting deprecation_warnings=False in 
+ansible.cfg.
+[WARNING]: Invalid characters were found in group names but not replaced, use
+-vvvv to see details
+
+PLAY [show version] ************************************************************
+
+TASK [run multiple commands on remote nodes] ***********************************
+ok: [csw2]
+ok: [acc-sw1]
+ok: [acc-sw3]
+ok: [acc-sw2]
+ok: [csw1]
+
+TASK [debug] *******************************************************************
+ok: [acc-sw2] => {
+    "print_output.stdout_lines": [
+        [
+            "Cisco IOS Software, vios_l2 Software (vios_l2-ADVENTERPRISEK9-M), Experimental Version 15.2(20200924:215240) [sweickge-sep24-2020-l2iol-release 135]",
+            "Copyright (c) 1986-2020 by Cisco Systems, Inc.",
+            "Compiled Tue 29-Sep-20 11:53 by sweickge",
+            "",
+            "",
+            "ROM: Bootstrap program is IOSv",
+            "",
+            "acc-sw2 uptime is 8 minutes",
+            "System returned to ROM by reload",
+            "System image file is \"flash0:/vios_l2-adventerprisek9-m\"",
+            "Last reload reason: Unknown reason",
+            "",
+            "",
+            "",
+            "This product contains cryptographic features and is subject to United",
+            "States and local country laws governing import, export, transfer and",
+            "use. Delivery of Cisco cryptographic products does not imply",
+            "third-party authority to import, export, distribute or use encryption.",
+            "Importers, exporters, distributors and users are responsible for",
+            "compliance with U.S. and local country laws. By using this product you",
+            "agree to comply with applicable laws and regulations. If you are unable",
+            "to comply with U.S. and local laws, return this product immediately.",
+            "",
+            "A summary of U.S. laws governing Cisco cryptographic products may be found at:",
+            "http://www.cisco.com/wwl/export/crypto/tool/stqrg.html",
+            "",
+            "If you require further assistance please contact us by sending email to",
+            "export@cisco.com.",
+            "",
+            "Cisco IOSv () processor (revision 1.0) with 574709K/209920K bytes of memory.",
+            "Processor board ID 9TDKH5F0PIZ",
+            "1 Virtual Ethernet interface",
+            "16 Gigabit Ethernet interfaces",
+            "DRAM configuration is 72 bits wide with parity disabled.",
+            "256K bytes of non-volatile configuration memory.",
+            "0K bytes of ATA System CompactFlash 0 (Read/Write)",
+            "0K bytes of ATA CompactFlash 1 (Read/Write)",
+            "0K bytes of ATA CompactFlash 2 (Read/Write)",
+            "0K bytes of ATA CompactFlash 3 (Read/Write)",
+            "",
+            "Configuration register is 0x101"
+        ],
+        [
+            "Interface              IP-Address      OK? Method Status                Protocol",
+            "GigabitEthernet0/0     unassigned      YES unset  up                    up      ",
+            "GigabitEthernet0/1     unassigned      YES unset  up                    up      ",
+            "GigabitEthernet0/2     unassigned      YES unset  down                  down    ",
+            "GigabitEthernet0/3     unassigned      YES unset  down                  down    ",
+            "GigabitEthernet1/0     unassigned      YES unset  down                  down    ",
+            "GigabitEthernet1/1     unassigned      YES unset  up                    up      ",
+            "GigabitEthernet1/2     unassigned      YES unset  down                  down    ",
+            "GigabitEthernet1/3     unassigned      YES unset  down                  down    ",
+            "GigabitEthernet2/0     unassigned      YES unset  down                  down    ",
+            "GigabitEthernet2/1     unassigned      YES unset  down                  down    ",
+            "GigabitEthernet2/2     unassigned      YES unset  down                  down    ",
+            "GigabitEthernet2/3     unassigned      YES unset  down                  down    ",
+            "GigabitEthernet3/0     unassigned      YES unset  down                  down    ",
+            "GigabitEthernet3/1     unassigned      YES unset  down                  down    ",
+            "GigabitEthernet3/2     unassigned      YES unset  down                  down    ",
+            "GigabitEthernet3/3     unassigned      YES unset  down                  down    ",
+            "Vlan1                  192.168.42.42   YES NVRAM  up                    up"
+        ]
+    ]
+}
+ok: [csw2] => {
+    "print_output.stdout_lines": [
+        [
+            "Cisco IOS Software, vios_l2 Software (vios_l2-ADVENTERPRISEK9-M), Experimental Version 15.2(20200924:215240) [sweickge-sep24-2020-l2iol-release 135]",
+            "Copyright (c) 1986-2020 by Cisco Systems, Inc.",
+            "Compiled Tue 29-Sep-20 11:53 by sweickge",
+            "",
+            "",
+            "ROM: Bootstrap program is IOSv",
+            "",
+            "CSW2 uptime is 9 minutes",
+            "System returned to ROM by reload",
+            "System image file is \"flash0:/vios_l2-adventerprisek9-m\"",
+            "Last reload reason: Unknown reason",
+            "",
+            "",
+            "",
+            "This product contains cryptographic features and is subject to United",
+            "States and local country laws governing import, export, transfer and",
+            "use. Delivery of Cisco cryptographic products does not imply",
+            "third-party authority to import, export, distribute or use encryption.",
+            "Importers, exporters, distributors and users are responsible for",
+            "compliance with U.S. and local country laws. By using this product you",
+            "agree to comply with applicable laws and regulations. If you are unable",
+            "to comply with U.S. and local laws, return this product immediately.",
+            "",
+            "A summary of U.S. laws governing Cisco cryptographic products may be found at:",
+            "http://www.cisco.com/wwl/export/crypto/tool/stqrg.html",
+            "",
+            "If you require further assistance please contact us by sending email to",
+            "export@cisco.com.",
+            "",
+            "Cisco IOSv () processor (revision 1.0) with 574709K/209920K bytes of memory.",
+            "Processor board ID 9VDBTGCBJRG",
+            "1 Virtual Ethernet interface",
+            "16 Gigabit Ethernet interfaces",
+            "DRAM configuration is 72 bits wide with parity disabled.",
+            "256K bytes of non-volatile configuration memory.",
+            "0K bytes of ATA System CompactFlash 0 (Read/Write)",
+            "0K bytes of ATA CompactFlash 1 (Read/Write)",
+            "0K bytes of ATA CompactFlash 2 (Read/Write)",
+            "0K bytes of ATA CompactFlash 3 (Read/Write)",
+            "",
+            "Configuration register is 0x101"
+        ],
+        [
+            "Interface              IP-Address      OK? Method Status                Protocol",
+            "GigabitEthernet0/0     unassigned      YES unset  up                    up      ",
+            "GigabitEthernet0/1     unassigned      YES unset  up                    up      ",
+            "GigabitEthernet0/2     unassigned      YES unset  up                    up      ",
+            "GigabitEthernet0/3     unassigned      YES unset  up                    up      ",
+            "GigabitEthernet1/0     unassigned      YES unset  up                    up      ",
+            "GigabitEthernet1/1     unassigned      YES unset  down                  down    ",
+            "GigabitEthernet1/2     unassigned      YES unset  down                  down    ",
+            "GigabitEthernet1/3     unassigned      YES unset  down                  down    ",
+            "GigabitEthernet2/0     unassigned      YES unset  down                  down    ",
+            "GigabitEthernet2/1     unassigned      YES unset  down                  down    ",
+            "GigabitEthernet2/2     unassigned      YES unset  down                  down    ",
+            "GigabitEthernet2/3     unassigned      YES unset  down                  down    ",
+            "GigabitEthernet3/0     unassigned      YES unset  down                  down    ",
+            "GigabitEthernet3/1     unassigned      YES unset  down                  down    ",
+            "GigabitEthernet3/2     unassigned      YES unset  up                    up      ",
+            "GigabitEthernet3/3     unassigned      YES unset  up                    up      ",
+            "Port-channel1          unassigned      YES unset  up                    up      ",
+            "Vlan1                  192.168.42.32   YES NVRAM  up                    up"
+        ]
+    ]
+}
+ok: [acc-sw1] => {
+    "print_output.stdout_lines": [
+        [
+            "Cisco IOS Software, vios_l2 Software (vios_l2-ADVENTERPRISEK9-M), Experimental Version 15.2(20200924:215240) [sweickge-sep24-2020-l2iol-release 135]",
+            "Copyright (c) 1986-2020 by Cisco Systems, Inc.",
+            "Compiled Tue 29-Sep-20 11:53 by sweickge",
+            "",
+            "",
+            "ROM: Bootstrap program is IOSv",
+            "",
+            "acc-sw1 uptime is 8 minutes",
+            "System returned to ROM by reload",
+            "System image file is \"flash0:/vios_l2-adventerprisek9-m\"",
+            "Last reload reason: Unknown reason",
+            "",
+            "",
+            "",
+            "This product contains cryptographic features and is subject to United",
+            "States and local country laws governing import, export, transfer and",
+            "use. Delivery of Cisco cryptographic products does not imply",
+            "third-party authority to import, export, distribute or use encryption.",
+            "Importers, exporters, distributors and users are responsible for",
+            "compliance with U.S. and local country laws. By using this product you",
+            "agree to comply with applicable laws and regulations. If you are unable",
+            "to comply with U.S. and local laws, return this product immediately.",
+            "",
+            "A summary of U.S. laws governing Cisco cryptographic products may be found at:",
+            "http://www.cisco.com/wwl/export/crypto/tool/stqrg.html",
+            "",
+            "If you require further assistance please contact us by sending email to",
+            "export@cisco.com.",
+            "",
+            "Cisco IOSv () processor (revision 1.0) with 574709K/209920K bytes of memory.",
+            "Processor board ID 915TFBYRA7W",
+            "1 Virtual Ethernet interface",
+            "16 Gigabit Ethernet interfaces",
+            "DRAM configuration is 72 bits wide with parity disabled.",
+            "256K bytes of non-volatile configuration memory.",
+            "0K bytes of ATA System CompactFlash 0 (Read/Write)",
+            "0K bytes of ATA CompactFlash 1 (Read/Write)",
+            "0K bytes of ATA CompactFlash 2 (Read/Write)",
+            "0K bytes of ATA CompactFlash 3 (Read/Write)",
+            "",
+            "Configuration register is 0x101"
+        ],
+        [
+            "Interface              IP-Address      OK? Method Status                Protocol",
+            "GigabitEthernet0/0     unassigned      YES unset  up                    up      ",
+            "GigabitEthernet0/1     unassigned      YES unset  up                    up      ",
+            "GigabitEthernet0/2     unassigned      YES unset  down                  down    ",
+            "GigabitEthernet0/3     unassigned      YES unset  down                  down    ",
+            "GigabitEthernet1/0     unassigned      YES unset  down                  down    ",
+            "GigabitEthernet1/1     unassigned      YES unset  up                    up      ",
+            "GigabitEthernet1/2     unassigned      YES unset  down                  down    ",
+            "GigabitEthernet1/3     unassigned      YES unset  down                  down    ",
+            "GigabitEthernet2/0     unassigned      YES unset  down                  down    ",
+            "GigabitEthernet2/1     unassigned      YES unset  down                  down    ",
+            "GigabitEthernet2/2     unassigned      YES unset  down                  down    ",
+            "GigabitEthernet2/3     unassigned      YES unset  down                  down    ",
+            "GigabitEthernet3/0     unassigned      YES unset  down                  down    ",
+            "GigabitEthernet3/1     unassigned      YES unset  down                  down    ",
+            "GigabitEthernet3/2     unassigned      YES unset  down                  down    ",
+            "GigabitEthernet3/3     unassigned      YES unset  down                  down    ",
+            "Vlan1                  192.168.42.41   YES NVRAM  up                    up"
+        ]
+    ]
+}
+ok: [acc-sw3] => {
+    "print_output.stdout_lines": [
+        [
+            "Cisco IOS Software, vios_l2 Software (vios_l2-ADVENTERPRISEK9-M), Experimental Version 15.2(20200924:215240) [sweickge-sep24-2020-l2iol-release 135]",
+            "Copyright (c) 1986-2020 by Cisco Systems, Inc.",
+            "Compiled Tue 29-Sep-20 11:53 by sweickge",
+            "",
+            "",
+            "ROM: Bootstrap program is IOSv",
+            "",
+            "acc-sw3 uptime is 8 minutes",
+            "System returned to ROM by reload",
+            "System image file is \"flash0:/vios_l2-adventerprisek9-m\"",
+            "Last reload reason: Unknown reason",
+            "",
+            "",
+            "",
+            "This product contains cryptographic features and is subject to United",
+            "States and local country laws governing import, export, transfer and",
+            "use. Delivery of Cisco cryptographic products does not imply",
+            "third-party authority to import, export, distribute or use encryption.",
+            "Importers, exporters, distributors and users are responsible for",
+            "compliance with U.S. and local country laws. By using this product you",
+            "agree to comply with applicable laws and regulations. If you are unable",
+            "to comply with U.S. and local laws, return this product immediately.",
+            "",
+            "A summary of U.S. laws governing Cisco cryptographic products may be found at:",
+            "http://www.cisco.com/wwl/export/crypto/tool/stqrg.html",
+            "",
+            "If you require further assistance please contact us by sending email to",
+            "export@cisco.com.",
+            "",
+            "Cisco IOSv () processor (revision 1.0) with 574709K/209920K bytes of memory.",
+            "Processor board ID 9F8TPA1PZQK",
+            "1 Virtual Ethernet interface",
+            "16 Gigabit Ethernet interfaces",
+            "DRAM configuration is 72 bits wide with parity disabled.",
+            "256K bytes of non-volatile configuration memory.",
+            "0K bytes of ATA System CompactFlash 0 (Read/Write)",
+            "0K bytes of ATA CompactFlash 1 (Read/Write)",
+            "0K bytes of ATA CompactFlash 2 (Read/Write)",
+            "0K bytes of ATA CompactFlash 3 (Read/Write)",
+            "",
+            "Configuration register is 0x101"
+        ],
+        [
+            "Interface              IP-Address      OK? Method Status                Protocol",
+            "GigabitEthernet0/0     unassigned      YES unset  up                    up      ",
+            "GigabitEthernet0/1     unassigned      YES unset  up                    up      ",
+            "GigabitEthernet0/2     unassigned      YES unset  down                  down    ",
+            "GigabitEthernet0/3     unassigned      YES unset  down                  down    ",
+            "GigabitEthernet1/0     unassigned      YES unset  down                  down    ",
+            "GigabitEthernet1/1     unassigned      YES unset  up                    up      ",
+            "GigabitEthernet1/2     unassigned      YES unset  down                  down    ",
+            "GigabitEthernet1/3     unassigned      YES unset  down                  down    ",
+            "GigabitEthernet2/0     unassigned      YES unset  down                  down    ",
+            "GigabitEthernet2/1     unassigned      YES unset  down                  down    ",
+            "GigabitEthernet2/2     unassigned      YES unset  down                  down    ",
+            "GigabitEthernet2/3     unassigned      YES unset  down                  down    ",
+            "GigabitEthernet3/0     unassigned      YES unset  down                  down    ",
+            "GigabitEthernet3/1     unassigned      YES unset  down                  down    ",
+            "GigabitEthernet3/2     unassigned      YES unset  down                  down    ",
+            "GigabitEthernet3/3     unassigned      YES unset  down                  down    ",
+            "Vlan1                  192.168.42.43   YES NVRAM  up                    up"
+        ]
+    ]
+}
+ok: [csw1] => {
+    "print_output.stdout_lines": [
+        [
+            "Cisco IOS Software, vios_l2 Software (vios_l2-ADVENTERPRISEK9-M), Experimental Version 15.2(20200924:215240) [sweickge-sep24-2020-l2iol-release 135]",
+            "Copyright (c) 1986-2020 by Cisco Systems, Inc.",
+            "Compiled Tue 29-Sep-20 11:53 by sweickge",
+            "",
+            "",
+            "ROM: Bootstrap program is IOSv",
+            "",
+            "CSW1 uptime is 8 minutes",
+            "System returned to ROM by reload",
+            "System image file is \"flash0:/vios_l2-adventerprisek9-m\"",
+            "Last reload reason: Unknown reason",
+            "",
+            "",
+            "",
+            "This product contains cryptographic features and is subject to United",
+            "States and local country laws governing import, export, transfer and",
+            "use. Delivery of Cisco cryptographic products does not imply",
+            "third-party authority to import, export, distribute or use encryption.",
+            "Importers, exporters, distributors and users are responsible for",
+            "compliance with U.S. and local country laws. By using this product you",
+            "agree to comply with applicable laws and regulations. If you are unable",
+            "to comply with U.S. and local laws, return this product immediately.",
+            "",
+            "A summary of U.S. laws governing Cisco cryptographic products may be found at:",
+            "http://www.cisco.com/wwl/export/crypto/tool/stqrg.html",
+            "",
+            "If you require further assistance please contact us by sending email to",
+            "export@cisco.com.",
+            "",
+            "Cisco IOSv () processor (revision 1.0) with 574709K/209920K bytes of memory.",
+            "Processor board ID 9WSUQV2RI0W",
+            "1 Virtual Ethernet interface",
+            "16 Gigabit Ethernet interfaces",
+            "DRAM configuration is 72 bits wide with parity disabled.",
+            "256K bytes of non-volatile configuration memory.",
+            "0K bytes of ATA System CompactFlash 0 (Read/Write)",
+            "0K bytes of ATA CompactFlash 1 (Read/Write)",
+            "0K bytes of ATA CompactFlash 2 (Read/Write)",
+            "0K bytes of ATA CompactFlash 3 (Read/Write)",
+            "",
+            "Configuration register is 0x101"
+        ],
+        [
+            "Interface              IP-Address      OK? Method Status                Protocol",
+            "GigabitEthernet0/0     unassigned      YES unset  up                    up      ",
+            "GigabitEthernet0/1     unassigned      YES unset  up                    up      ",
+            "GigabitEthernet0/2     unassigned      YES unset  up                    up      ",
+            "GigabitEthernet0/3     unassigned      YES unset  up                    up      ",
+            "GigabitEthernet1/0     unassigned      YES unset  up                    up      ",
+            "GigabitEthernet1/1     unassigned      YES unset  up                    up      ",
+            "GigabitEthernet1/2     unassigned      YES unset  down                  down    ",
+            "GigabitEthernet1/3     unassigned      YES unset  down                  down    ",
+            "GigabitEthernet2/0     unassigned      YES unset  down                  down    ",
+            "GigabitEthernet2/1     unassigned      YES unset  down                  down    ",
+            "GigabitEthernet2/2     unassigned      YES unset  down                  down    ",
+            "GigabitEthernet2/3     unassigned      YES unset  down                  down    ",
+            "GigabitEthernet3/0     unassigned      YES unset  down                  down    ",
+            "GigabitEthernet3/1     unassigned      YES unset  down                  down    ",
+            "GigabitEthernet3/2     unassigned      YES unset  up                    up      ",
+            "GigabitEthernet3/3     unassigned      YES unset  up                    up      ",
+            "Port-channel1          unassigned      YES unset  up                    up      ",
+            "Vlan1                  192.168.42.31   YES NVRAM  up                    up"
+        ]
+    ]
+}
+
+PLAY RECAP *********************************************************************
+acc-sw1                    : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+acc-sw2                    : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+acc-sw3                    : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+csw1                       : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+csw2                       : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
 root@NetworkAutomation-1:~# 
